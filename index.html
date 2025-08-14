@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Прогноз погоды</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container py-4 py-md-5">
+    <header class="mb-4 mb-md-5 text-center">
+      <h1 class="display-6 fw-semibold mb-2">Прогноз погоды <span class="brand-gradient">WeatherBroouAI</span></h1>
+      <p class="mini">Точная температура и регион. Источник: Open-Meteo</p>
+    </header>
+
+    <!-- Поиск -->
+    <section class="glass p-3 p-md-4 mb-4 fade-up" id="controls">
+      <form id="searchForm" class="row g-2 g-md-3 align-items-center">
+        <div class="col-12 col-md-6">
+          <label for="cityInput" class="form-label mini mb-1">Город</label>
+          <input id="cityInput" class="form-control form-control-lg" placeholder="Например, Баку" value="Баку">
+        </div>
+        <div class="col-12 col-md-auto d-grid d-md-flex gap-2 mt-1">
+          <button class="btn btn-primary btn-lg px-4" type="submit">
+            <i class="bi bi-search me-1"></i> Искать
+          </button>
+          <button id="btnGeo" class="btn btn-outline-light btn-lg px-4" type="button">
+            <i class="bi bi-geo-alt me-1"></i> Мое местоположение
+          </button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Ошибки -->
+    <div id="alertBox" class="d-none"></div>
+
+    <!-- Погода -->
+    <section class="glass p-3 p-md-4 fade-up" id="currentCard">
+      <div class="d-flex flex-column flex-md-row align-items-start align-items-md-center justify-content-between gap-3">
+        <div>
+          <div class="mini">Регион</div>
+          <h2 id="placeLabel" class="h3 fw-semibold mb-1">—</h2>
+          <div class="mini" id="asOf">—</div>
+        </div>
+        <div class="text-center text-md-end">
+          <div class="temp-display" id="tempNow">—°</div>
+          <div class="mini"><span id="descNow">—</span> • Ветер <span id="windNow">—</span> м/с</div>
+        </div>
+      </div>
+      <hr class="border-secondary-subtle">
+      <div class="row g-3 text-center text-md-start">
+        <div class="col-12 col-sm">
+          <span class="badge badge-soft rounded-pill me-2"><i class="bi bi-thermometer-half me-1"></i> Мин</span>
+          <span id="tempMin" class="fw-semibold">—°C</span>
+        </div>
+        <div class="col-12 col-sm">
+          <span class="badge badge-soft rounded-pill me-2"><i class="bi bi-thermometer-high me-1"></i> Макс</span>
+          <span id="tempMax" class="fw-semibold">—°C</span>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

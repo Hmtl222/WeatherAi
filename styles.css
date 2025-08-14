@@ -1,0 +1,33 @@
+:root {
+  --glass-bg: rgba(255,255,255,0.08);
+  --glass-brd: rgba(255,255,255,0.18);
+}
+
+body {
+  min-height: 100vh;
+  background: radial-gradient(1200px 800px at 10% 10%, #1f2937 0%, #0b1020 55%),
+              linear-gradient(180deg,#0b1020, #0b1020 60%, #0a0f1a 100%);
+  color: #e5e7eb;
+  overflow-x: hidden;
+}
+
+.glass {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-brd);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 1.25rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+
+.brand-gradient {
+  background: linear-gradient(90deg,#8b5cf6,#22d3ee);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+
+.fade-up { opacity: 0; transform: translateY(12px); transition: opacity .6s ease, transform .6s ease; }
+.fade-up.show { opacity: 1; transform: translateY(0); }
+
+.temp-display { font-size: clamp(42px, 10vw, 72px); font-weight: 700; line-height: .95; }
+.mini { opacity:.85; }
+.badge-soft { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.2); }
